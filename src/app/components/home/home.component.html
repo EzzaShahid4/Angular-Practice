@@ -1,0 +1,47 @@
+<h1>{{ title }}</h1>
+<div>
+  <button (click)="HandelEventCall()">Function call</button>
+</div>
+<div class="design">
+  <button (click)="Sum(20, 65)">sum</button>
+  <h3>sum = {{ add }}</h3>
+</div>
+<div class="design">
+  <input
+    type="text"
+    placeholder="keyup box"
+    #box1
+    (keyup)="getData(box1.value)"
+  />
+</div>
+<div class="design">
+  <input
+    type="text"
+    placeholder="keydown box"
+    #box2
+    (keydown)="getData(box2.value)"
+  />
+</div>
+<div class="design">
+  <input
+    type="text"
+    placeholder="blur box"
+    #box3
+    (blur)="getData(box3.value)"
+  />
+</div>
+<div class="design">
+  <input
+    type="text"
+    placeholder="input box"
+    #box4
+    (input)="getData(box4.value)"
+  />
+</div>
+<h3 (mouseover)="MouseEffect('Mouse over')">
+  Display data in console on mouse over.
+</h3>
+
+<h3 (mouseleave)="MouseEffect('Mouse leave')">
+  Display data in console on mouse leave.
+</h3>
