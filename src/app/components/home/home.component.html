@@ -1,47 +1,66 @@
-<h1>{{ title }}</h1>
-<div>
-  <button (click)="HandelEventCall()">Function call</button>
-</div>
-<div class="design">
-  <button (click)="Sum(20, 65)">sum</button>
-  <h3>sum = {{ add }}</h3>
-</div>
-<div class="design">
-  <input
-    type="text"
-    placeholder="keyup box"
-    #box1
-    (keyup)="getData(box1.value)"
-  />
-</div>
-<div class="design">
-  <input
-    type="text"
-    placeholder="keydown box"
-    #box2
-    (keydown)="getData(box2.value)"
-  />
-</div>
-<div class="design">
-  <input
-    type="text"
-    placeholder="blur box"
-    #box3
-    (blur)="getData(box3.value)"
-  />
-</div>
-<div class="design">
-  <input
-    type="text"
-    placeholder="input box"
-    #box4
-    (input)="getData(box4.value)"
-  />
-</div>
-<h3 (mouseover)="MouseEffect('Mouse over')">
-  Display data in console on mouse over.
-</h3>
+<!-- <div>
+  <h1>{{ title }}</h1>
+  <div>
+    <button (click)="HandelEventCall()">Function call</button>
+  </div>
+  <div class="design">
+    <button (click)="Sum(20, 65)">sum</button>
+    <h3>sum = {{ add }}</h3>
+  </div>
+  <div class="design">
+    <input
+      type="text"
+      placeholder="keyup box"
+      #box1
+      (keyup)="getData(box1.value)"
+    />
+  </div>
+  <div class="design">
+    <input
+      type="text"
+      placeholder="keydown box"
+      #box2
+      (keydown)="getData(box2.value)"
+    />
+  </div>
+  <div class="design">
+    <input
+      type="text"
+      placeholder="blur box"
+      #box3
+      (blur)="getData(box3.value)"
+    />
+  </div>
+  <div class="design">
+    <input
+      type="text"
+      placeholder="input box"
+      #box4
+      (input)="getData(box4.value)"
+    />
+  </div>
+  <h3 (mouseover)="MouseEffect('Mouse over')">
+    Display data in console on mouse over.
+  </h3>
 
-<h3 (mouseleave)="MouseEffect('Mouse leave')">
-  Display data in console on mouse leave.
-</h3>
+  <h3 (mouseleave)="MouseEffect('Mouse leave')">
+    Display data in console on mouse leave.
+  </h3>
+</div> -->
+<div class="container-fluid">
+  <br /><br /><br />
+  <div class="section-title row d-flex justify-content-center">
+    Please Choose ERP System
+  </div>
+  <div class="row d-flex justify-content-between" style="margin-top: 8%">
+    <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
+      <div
+        class="main-btn mt-5"
+        [routerLink]="['/ntitleLogin']"
+        style="background-color: #2f4858 !important"
+      >
+        <img src="/assets/Ntitle-logo.png" alt="Ntitle" />
+      </div>
+    </div>
+  </div>
+</div>

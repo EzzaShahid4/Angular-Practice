@@ -1,3 +1,29 @@
 .design {
   margin-top: 15px;
 }
+.section-title {
+  font-weight: 800;
+  font-size: 24px;
+}
+.main-btn {
+  background: #f6fff1;
+  border: 1px solid #dbe6f1;
+  height: 206px;
+  padding: 40px 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-btn-heading {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: left;
+  color: #3274b1;
+  margin-left: 20%;
+  // margin-top: 4%;
+}
