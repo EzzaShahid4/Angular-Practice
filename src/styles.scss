@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+.mdc-menu-surface {
+  border-radius: 0px !important;
+}
+.mdc-menu-surface.mat-mdc-autocomplete-panel {
+  background-color: #222222;
+  color: #fff;
+}
+.mat-mdc-menu-panel.mat-mdc-menu-panel {
+  max-width: fit-content !important;
+}
+
+.mat-mdc-menu-content {
+  padding: 0px !important;
+}
+
+.mat-mdc-menu-item {
+  padding-left: 10px !important;
+  padding-right: 32px !important;
+  -webkit-tap-highlight-color: #e9f0fb !important;
+  min-height: 40px !important;
+}
+.d-pointer {
+  cursor: pointer;
+}

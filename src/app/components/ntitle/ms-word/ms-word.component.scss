@@ -1,10 +1,56 @@
-.sidebar {
-  width: 20%;
-  background-color: #2f4858;
-  position: fixed;
-  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.08);
+form {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.file-upload-container {
+  background: #f8f9fa;
+  border: 2px dashed #007bff;
+  border-radius: 10px;
+  padding: 40px 90px 40px 90px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  width: 100%;
+  max-width: 400px;
+}
 
-  z-index: 1;
-  height: 350vh;
-  border-top: none !important;
+.file-upload-container:hover {
+  background: #e9ecef;
+  border-color: #0056b3;
+}
+.input-form {
+  margin-top: 30px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  padding: 50px;
+  width: 60%;
+  justify-self: center;
+}
+/* Input Field Styling */
+.input-field input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.input-field input:focus {
+  border-color: #007bff;
+  box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+/* Label Styling */
+.input-field label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  display: block;
+  color: #333;
+}
+.btn-center {
+  justify-self: center;
 }

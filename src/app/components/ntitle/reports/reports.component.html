@@ -1,1 +1,39 @@
-<p>reports works!</p>
+<br /><br />
+<div class="d-flex flex-wrap justify-content-between">
+  <div>
+    <input type="text" placeholder="Search name..." />
+  </div>
+  <span class="alarms">
+    <p-dropdown placeholder="Matter"></p-dropdown>
+  </span>
+  <div class="d-flex" style="gap: 10px">
+    <button>Enquires</button>
+  </div>
+  <div class="d-flex" style="gap: 10px">
+    <button>Report</button>
+  </div>
+  <div class="d-flex" style="gap: 10px">
+    <button>Snapshot</button>
+  </div>
+</div>
+<br /><br /><br />
+<div class="mt-2" style="margin-top: 10%">
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons
+      aria-label="Select page of periodic elements"
+    >
+    </mat-paginator>
+  </div>
+</div>

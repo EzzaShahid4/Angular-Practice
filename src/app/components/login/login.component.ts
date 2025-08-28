@@ -52,7 +52,8 @@ export class LoginComponent {
             (dt as { userRole: string }).userRole === 'NTitle Admin' ||
             (dt as { userRole: string }).userRole === 'NTitle Standard'
           ) {
-            this.router.navigateByUrl(`/Ntitle/MsWord`);
+            // /MsWord
+            this.router.navigateByUrl(`/Ntitle`);
             const Toast = Swal.mixin({
               toast: true,
               position: 'top-end',
@@ -111,6 +112,7 @@ export class LoginComponent {
     }
   }
   gotoDashboard() {
-    this.router.navigateByUrl(`/Ntitle/MsWord`);
+    this.router.navigateByUrl(`/Ntitle`);
   }
+  // /MsWord
 }

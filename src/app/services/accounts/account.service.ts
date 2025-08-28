@@ -23,4 +23,10 @@ export class AccountService {
         })
       );
   }
+  doNtileLogout() {
+    let removeToken = localStorage.removeItem('sandbox_ntitle_token');
+    if (removeToken == null) {
+      this.router.navigate(['/home']);
+    }
+  }
 }

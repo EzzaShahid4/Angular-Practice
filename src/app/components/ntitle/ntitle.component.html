@@ -1,2 +1,159 @@
-<p>ntitle works!</p>
-<div class="bg-sidebar"></div>
+<div
+  class="bg-sidebar"
+  style="min-width: 16rem"
+  id="sidebar-wrapper"
+  [ngClass]="status ? 'hide' : 'show'"
+>
+  <div class="bg-inner-sidebar list-group list-group-flush mt-2">
+    <div
+      class="d-flex justify-content-center p-3 d-pointer"
+      [routerLink]="['/']"
+    >
+      <img
+        src="./assets/Ntitle-logo.png"
+        class="mt-4 mb-4"
+        style="width: auto"
+      />
+    </div>
+    <br />
+    <a
+      [routerLinkActive]="['boxclass']"
+      [routerLink]="['/Ntitle/MsWord']"
+      class="item-sidebar d-pointer"
+    >
+      <div class="d-flex d-pointer Menu mt-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="mt-1"
+          width="24"
+          height="24"
+          viewBox="0 0 2048 2048"
+        >
+          <path
+            fill="currentColor"
+            d="M1024 1000v959l-64 32l-832-415V536l832-416l832 416v744h-128V680zm-64-736L719 384l621 314l245-122zm-64 1552v-816L256 680v816zM335 576l625 312l238-118l-622-314zm1073 1216v-128h640v128zm0-384h640v128h-640zm-256 640v-128h128v128zm0-512v-128h128v128zm0 256v-128h128v128zm-128 24h1zm384 232v-128h640v128z"
+          />
+        </svg>
+        <div class="my-1 title-m-l">Doc Edit</div>
+      </div>
+    </a>
+    <a
+      [routerLinkActive]="['boxclass']"
+      [routerLink]="['/Ntitle/reports']"
+      class="item-sidebar d-pointer"
+    >
+      <div class="d-flex d-pointer Menu mt-2">
+        <svg
+          class="mt-1"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 48 48"
+        >
+          <g
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="3"
+          >
+            <path
+              d="M29.368 3.08c.897.28 3.777 1.422 7.937 5.479c3.92 3.823 5.187 6.538 5.559 7.57C42.947 18.37 43 20.98 43 24c0 8.065-.375 13.204-.717 16.214c-.25 2.202-1.903 3.848-4.103 4.105c-2.815.329-7.413.681-14.18.681s-11.365-.352-14.18-.68c-2.2-.258-3.853-1.904-4.103-4.106C5.375 37.204 5 32.064 5 24s.375-13.204.717-16.214C5.967 5.584 7.62 3.938 9.82 3.68C12.635 3.353 17.233 3 24 3c1.97 0 3.756.03 5.368.08M13 37h22m-22-7h22"
+            />
+            <path
+              d="M13 22.868c2.572-3.93 4.717-5.656 5.896-6.38c.557-.343 1.23-.119 1.52.468c.663 1.345 1.29 3.193 1.737 4.66c.264.86 1.52 1.045 2.073.335C26.452 19.095 29.5 16.5 29.5 16.5m4.067 1.82c.44-2.324.457-4.363.42-5.443a.89.89 0 0 0-.864-.865a25.5 25.5 0 0 0-5.444.42c-.754.143-1.004 1.062-.46 1.605l4.744 4.745c.543.543 1.461.293 1.604-.461"
+            />
+          </g>
+        </svg>
+        <div class="my-1 title-m-l">Reports</div>
+      </div>
+    </a>
+    <a
+      [routerLinkActive]="['boxclass']"
+      [routerLink]="['/Ntitle/test-data']"
+      class="item-sidebar d-pointer"
+    >
+      <div class="d-flex d-pointer Menu mt-2">
+        <svg
+          class="mt-1"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 32 32"
+        >
+          <path
+            fill="currentColor"
+            d="M24 3H8a2 2 0 0 0-2 2v22a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 2v6H8V5ZM8 19v-6h16v6Zm0 8v-6h16v6Z"
+          />
+          <circle cx="11" cy="8" r="1" fill="currentColor" />
+          <circle cx="11" cy="16" r="1" fill="currentColor" />
+          <circle cx="11" cy="24" r="1" fill="currentColor" />
+        </svg>
+        <div class="my-1 title-m-l">Data</div>
+      </div>
+    </a>
+    <br />
+    <br />
+    <br />
+    <hr />
+    <a class="item-sidebar d-pointer">
+      <div class="d-flex d-pointer Menu my-2" (click)="Logout()">
+        <!-- <span class="material-icons mt-1" style="font-size: 26px !important"> logout </span> -->
+        <svg
+          class="mt-1"
+          width="26px"
+          height="26px"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M5.07692 5.92648C5.07692 4.38908 6.33971 3.14278 7.89744 3.14278H12C12.4248 3.14278 12.7692 3.48268 12.7692 3.90197C12.7692 4.32126 12.4248 4.66116 12 4.66116H7.89744C7.18938 4.66116 6.61539 5.22766 6.61539 5.92648V6.93873C6.61539 7.35802 6.27099 7.69792 5.84615 7.69792C5.42132 7.69792 5.07692 7.35802 5.07692 6.93873V5.92648ZM5.84615 16.3021C6.27099 16.3021 6.61539 16.642 6.61539 17.0613V18.0735C6.61539 18.7723 7.18938 19.3388 7.89744 19.3388H12C12.4248 19.3388 12.7692 19.6788 12.7692 20.098C12.7692 20.5173 12.4248 20.8572 12 20.8572H7.89744C6.33971 20.8572 5.07692 19.6109 5.07692 18.0735V17.0613C5.07692 16.642 5.42132 16.3021 5.84615 16.3021Z"
+              fill="#FF2E00"
+            ></path>
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M12.7692 4.78618C12.7692 3.90491 13.6592 3.29355 14.4966 3.59962L19.6248 5.47416C20.1277 5.658 20.4615 6.13139 20.4615 6.66071V17.3393C20.4615 17.8686 20.1277 18.342 19.6248 18.5258L14.4966 20.4004C13.6592 20.7065 12.7692 20.0951 12.7692 19.2138V4.78618ZM15.0309 2.17576C13.1887 1.5024 11.2308 2.84738 11.2308 4.78618V19.2138C11.2308 21.1526 13.1887 22.4976 15.0309 21.8242L20.1591 19.9497C21.2656 19.5452 22 18.5038 22 17.3393V6.66071C22 5.4962 21.2656 4.45475 20.1591 4.0503L15.0309 2.17576Z"
+              fill="#FF2E00"
+            ></path>
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M5.36444 9.43867C5.06404 9.14218 4.57699 9.14218 4.27658 9.43867L2.2253 11.4632C1.9249 11.7597 1.9249 12.2403 2.2253 12.5368L4.27658 14.5613C4.57699 14.8578 5.06404 14.8578 5.36444 14.5613C5.66484 14.2649 5.66484 13.7842 5.36444 13.4877L4.62632 12.7592H8.92308C9.34791 12.7592 9.69231 12.4193 9.69231 12C9.69231 11.5807 9.34791 11.2408 8.92308 11.2408H4.62632L5.36444 10.5123C5.66484 10.2158 5.66484 9.73515 5.36444 9.43867Z"
+              fill="#FF2E00"
+            ></path>
+          </g>
+        </svg>
+        <div class="my-1 title-m-l" style="margin-left: 15px; color: #ff2e00">
+          Logout
+        </div>
+      </div>
+    </a>
+
+    <br />
+  </div>
+</div>
+<div id="page-content-main">
+  <img
+    title="Menu"
+    width="50"
+    class="show-menu"
+    (click)="clickEvent()"
+    src="./assets/{{ chevron }}.png"
+  />
+  <div class="container-fluid">
+    <div class="Block">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
