@@ -1,50 +1,114 @@
 <div class="text-center">
-  <div class="file-upload-container mt-5">Click to select a Ms Word file.</div>
+  <div class="file-upload-container mt-5" (click)="fileInput.click()">
+    <input type="file" #fileInput (change)="onFileSelected($event)" hidden />
+    <p *ngIf="selectedFile; else placeholder">
+      Selected File: <strong>{{ selectedFile.name }}</strong>
+    </p>
+    <ng-template #placeholder>
+      <p class="btn-text mt-3">Click to select a MS Word file</p>
+    </ng-template>
+  </div>
 </div>
 <form class="mt-4">
   <div class="row px-3">
     <div class="col-6 input-field">
       <label>Original Text 1 <span style="color: red">*</span></label>
-      <input placeholder="Enter the text to replace (e.g.,`value`)" />
+      <input
+        formControlName="FirstFromWord"
+        placeholder="Enter the text to replace (e.g.,`value`)"
+        type="text"
+        class="form-control"
+      />
     </div>
     <div class="col-6 input-field">
       <label>Replace With 1 <span style="color: red">*</span></label>
-      <input placeholder="Enter another text to find (optional)" />
+      <input
+        formControlName="FirstToWord"
+        placeholder="Enter another text to find (optional)"
+        type="text"
+        class="form-control"
+      />
     </div>
     <div class="col-6 input-field">
       <label>Find Text 2 <span style="color: red">*</span></label>
-      <input placeholder="Enter another text to find (optional)" />
+      <input
+        formControlName="SecondFromWord"
+        placeholder="Enter another text to find (optional)"
+        type="text"
+        class="form-control"
+      />
     </div>
     <div class="col-6 input-field">
       <label>Replace With 2 <span style="color: red">*</span></label>
-      <input placeholder="Enter another text to find (optional)" />
+      <input
+        formControlName="SecondToWord"
+        placeholder="Enter another text to find (optional)"
+        type="text"
+        class="form-control"
+      />
     </div>
     <div class="col-6 input-field">
       <label>Find Text 3 <span style="color: red">*</span></label>
-      <input placeholder="Enter another text to find (optional)" />
+      <input
+        formControlName="ThirdFromWord"
+        placeholder="Enter another text to find (optional)"
+        type="text"
+        class="form-control"
+      />
     </div>
     <div class="col-6 input-field">
       <label>Replace With 3 <span style="color: red">*</span></label>
-      <input placeholder="Enter another text to find (optional)" />
+      <input
+        formControlName="ThirdToWord"
+        placeholder="Enter another text to find (optional)"
+        type="text"
+        class="form-control"
+      />
     </div>
     <div class="col-6 input-field">
       <label>Find Text 4 <span style="color: red">*</span></label>
-      <input placeholder="Enter another text to find (optional)" />
+      <input
+        formControlName="ForthFromWord"
+        placeholder="Enter another text to find (optional)"
+        type="text"
+        class="form-control"
+      />
     </div>
     <div class="col-6 input-field">
       <label>Replace With 4 <span style="color: red">*</span></label>
-      <input placeholder="Enter another text to find (optional)" />
+      <input
+        formControlName="ForthToWord"
+        placeholder="Enter another text to find (optional)"
+        type="text"
+        class="form-control"
+      />
     </div>
     <div class="col-6 input-field">
       <label>Find Text 5 <span style="color: red">*</span></label>
-      <input placeholder="Enter another text to find (optional)" />
+      <input
+        formControlName="FifthFromWord"
+        placeholder="Enter another text to find (optional)"
+        type="text"
+        class="form-control"
+      />
     </div>
     <div class="col-6 input-field">
       <label>Replace With 5 <span style="color: red">*</span></label>
-      <input placeholder="Enter another text to find (optional)" />
+      <input
+        formControlName="FifthToWord"
+        placeholder="Enter another text to find (optional)"
+        type="text"
+        class="form-control"
+      />
     </div>
   </div>
 </form>
 <div class="btn-center mt-4 mb-5">
-  <button class="btn btn-primary mt-3 mb-5">Genrate File</button>
+  <button
+    class="btn btn-primary mt-3 mb-5"
+    (click)="GenerateDocument()"
+    [disabled]="exportingDoc"
+  >
+    {{ exportingDoc ? "Generating..." : "Generate File" }}
+  </button>
 </div>

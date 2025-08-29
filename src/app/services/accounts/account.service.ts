@@ -8,6 +8,9 @@ import { ntitleAuthModel } from '../../Models/Auth-Model';
   providedIn: 'root',
 })
 export class AccountService {
+  getToken() {
+    throw new Error('Method not implemented.');
+  }
   constructor(
     private router: Router,
     private repositoryService: RepositoryService
@@ -27,6 +30,12 @@ export class AccountService {
     let removeToken = localStorage.removeItem('sandbox_ntitle_token');
     if (removeToken == null) {
       this.router.navigate(['/home']);
+    }
+  }
+  doLogout() {
+    let removeToken = localStorage.removeItem('sandbox_Access_token');
+    if (removeToken == null) {
+      this.router.navigate(['/']);
     }
   }
 }

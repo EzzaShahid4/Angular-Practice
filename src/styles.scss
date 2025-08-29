@@ -23,3 +23,69 @@
 .d-pointer {
   cursor: pointer;
 }
+/* Dropdown container */
+.p-dropdown {
+  border: 1px solid #ccc !important;
+  border-radius: 12px !important;
+  height: 44px !important;
+  padding: 0 12px !important;
+  background: white !important;
+  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  color: #333 !important;
+}
+
+/* Panel (dropdown list) */
+.p-dropdown-panel {
+  border-radius: 12px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+  padding: 8px 0 !important;
+  border: none !important;
+}
+
+/* Search box inside dropdown */
+.p-dropdown-filter-container {
+  padding: 6px 10px !important;
+}
+.p-dropdown-filter {
+  border: 1px solid #ccc !important;
+  border-radius: 8px !important;
+  padding: 6px 8px !important;
+  box-shadow: 0 0 0 2px rgba(100, 150, 255, 0.2) !important;
+}
+
+/* Items */
+.p-dropdown-items .p-dropdown-item {
+  padding: 10px 14px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #333 !important;
+  border-radius: 8px !important;
+  margin: 2px 6px !important;
+}
+
+// /* Hover & Selected Item */
+// .p-dropdown-items .p-dropdown-item.p-highlight {
+//   background: #e9f2ff !important;
+//   color: #007bff !important;
+// }
+// .p-dropdown-items .p-dropdown-item:hover {
+//   background: #f5f7fa !important;
+// }
+.p-dropdown .p-dropdown-label {
+  padding: 6px !important;
+  font-family: Poppins !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 24px !important;
+  letter-spacing: -0.011em !important;
+  text-align: left;
+  color: #000 !important;
+}
+
+.p-dropdown {
+  width: 200px !important;
+}

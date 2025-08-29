@@ -1,39 +1,264 @@
 <br /><br />
 <div class="d-flex flex-wrap justify-content-between">
-  <div>
-    <input type="text" placeholder="Search name..." />
+  <div class="d-flex" style="gap: 40px">
+    <div class="position-relative searchinput">
+      <svg
+        class="position-absolute"
+        style="top: 10px; left: 10px"
+        xmlns="http://www.w3.org/2000/svg"
+        width="22px"
+        height="22px"
+        viewBox="0 0 26 26"
+      >
+        <path
+          fill="currentColor"
+          d="M10 .188A9.812 9.812 0 0 0 .187 10A9.812 9.812 0 0 0 10 19.813c2.29 0 4.393-.811 6.063-2.125l.875.875a1.845 1.845 0 0 0 .343 2.156l4.594 4.625c.713.714 1.88.714 2.594 0l.875-.875a1.84 1.84 0 0 0 0-2.594l-4.625-4.594a1.824 1.824 0 0 0-2.157-.312l-.875-.875A9.812 9.812 0 0 0 10 .188M10 2a8 8 0 1 1 0 16a8 8 0 0 1 0-16M4.937 7.469a5.446 5.446 0 0 0-.812 2.875a5.46 5.46 0 0 0 5.469 5.469a5.516 5.516 0 0 0 3.156-1a7.166 7.166 0 0 1-.75.03a7.045 7.045 0 0 1-7.063-7.062c0-.104-.005-.208 0-.312"
+        />
+      </svg>
+      <input
+        type="text"
+        autocomplete="off"
+        (keyup)="applyFilter()"
+        style="padding-left: 40px"
+        (keyup.enter)="applyFilter()"
+        [(ngModel)]="searchKey"
+        class="search-input"
+        name="searchValue"
+        placeholder="Search name..."
+      />
+      <div style="position: absolute; top: 4px; right: 0">
+        <span
+          class="material-icons cross-icon d-pointer"
+          style="margin-top: 6px !important"
+          (click)="searchKey = null; applyFilter()"
+          *ngIf="searchKey != null && searchKey != ''"
+        >
+          close
+        </span>
+      </div>
+    </div>
+    <span class="alarms">
+      <p-dropdown
+        [options]="matters"
+        [(ngModel)]="matterId"
+        optionLabel="propertyAddress"
+        [filter]="true"
+        optionValue="matterId"
+        (onChange)="LoadReports(); currentPage = 0"
+        placeholder="Matter"
+        styleClass="custom-dropdown"
+      />
+    </span>
   </div>
-  <span class="alarms">
-    <p-dropdown placeholder="Matter"></p-dropdown>
-  </span>
   <div class="d-flex" style="gap: 10px">
-    <button>Enquires</button>
-  </div>
-  <div class="d-flex" style="gap: 10px">
-    <button>Report</button>
-  </div>
-  <div class="d-flex" style="gap: 10px">
-    <button>Snapshot</button>
+    <span>
+      <button
+        *ngIf="buttonTypeId != 0"
+        (click)="buttonTypeId = 0; LoadReports()"
+        class="add-btn"
+        style="float: right; width: 150px"
+      >
+        <span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M10.92 10.438a1.08 1.08 0 1 1 1.698.886c-.27.19-.598.442-.86.76c-.267.322-.508.759-.508 1.3a.75.75 0 0 0 1.5 0c0-.075.03-.184.162-.343a3 3 0 0 1 .566-.489a2.58 2.58 0 1 0-4.058-2.114a.75.75 0 0 0 1.5 0M12 14.642a.75.75 0 1 0 0 1.5a.75.75 0 0 0 0-1.5"
+            />
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10s10-4.477 10-10S17.523 2 12 2M3.5 12a8.5 8.5 0 1 1 17 0a8.5 8.5 0 0 1-17 0"
+              clip-rule="evenodd"
+            />
+          </svg>
+          Enquries</span
+        >
+      </button>
+      <button
+        *ngIf="buttonTypeId == 0"
+        class="add-btn-disable"
+        style="float: right; width: 150px"
+      >
+        <span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M10.92 10.438a1.08 1.08 0 1 1 1.698.886c-.27.19-.598.442-.86.76c-.267.322-.508.759-.508 1.3a.75.75 0 0 0 1.5 0c0-.075.03-.184.162-.343a3 3 0 0 1 .566-.489a2.58 2.58 0 1 0-4.058-2.114a.75.75 0 0 0 1.5 0M12 14.642a.75.75 0 1 0 0 1.5a.75.75 0 0 0 0-1.5"
+            />
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10s10-4.477 10-10S17.523 2 12 2M3.5 12a8.5 8.5 0 1 1 17 0a8.5 8.5 0 0 1-17 0"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <i *ngIf="loadImport" class="fa fa-refresh fa-spin"></i>
+          Enquries</span
+        >
+      </button>
+    </span>
+    <span>
+      <button
+        *ngIf="buttonTypeId != 1"
+        (click)="buttonTypeId = 1; LoadReports()"
+        class="add-btn"
+        style="float: right; width: 150px"
+      >
+        <span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill="currentColor"
+              d="M10.58 9.902a.41.41 0 0 1-.407.408H5.826a.408.408 0 0 1 0-.816h4.347a.41.41 0 0 1 .408.408m-.407-2.581H5.826a.408.408 0 0 0 0 .815h4.347a.408.408 0 0 0 0-.815m3.668-4.483v11.411a.95.95 0 0 1-.95.951H3.108a.95.95 0 0 1-.95-.95V2.837a.95.95 0 0 1 .95-.951h2.525a3.118 3.118 0 0 1 4.732 0h2.524a.95.95 0 0 1 .951.95M5.69 3.923v.135h4.618v-.135a2.31 2.31 0 1 0-4.619 0m7.335-1.087a.136.136 0 0 0-.136-.136h-2.015c.165.386.25.802.25 1.223v.543a.41.41 0 0 1-.408.408H5.283a.41.41 0 0 1-.408-.408v-.543c0-.42.085-.837.25-1.223H3.108a.136.136 0 0 0-.136.136v11.411a.136.136 0 0 0 .136.136h9.781a.136.136 0 0 0 .136-.136z"
+            />
+          </svg>
+          Report</span
+        >
+      </button>
+      <button
+        *ngIf="buttonTypeId == 1"
+        class="add-btn-disable"
+        style="float: right; width: 150px"
+      >
+        <span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill="currentColor"
+              d="M10.58 9.902a.41.41 0 0 1-.407.408H5.826a.408.408 0 0 1 0-.816h4.347a.41.41 0 0 1 .408.408m-.407-2.581H5.826a.408.408 0 0 0 0 .815h4.347a.408.408 0 0 0 0-.815m3.668-4.483v11.411a.95.95 0 0 1-.95.951H3.108a.95.95 0 0 1-.95-.95V2.837a.95.95 0 0 1 .95-.951h2.525a3.118 3.118 0 0 1 4.732 0h2.524a.95.95 0 0 1 .951.95M5.69 3.923v.135h4.618v-.135a2.31 2.31 0 1 0-4.619 0m7.335-1.087a.136.136 0 0 0-.136-.136h-2.015c.165.386.25.802.25 1.223v.543a.41.41 0 0 1-.408.408H5.283a.41.41 0 0 1-.408-.408v-.543c0-.42.085-.837.25-1.223H3.108a.136.136 0 0 0-.136.136v11.411a.136.136 0 0 0 .136.136h9.781a.136.136 0 0 0 .136-.136z"
+            />
+          </svg>
+          <i *ngIf="loadImport" class="fa fa-refresh fa-spin"></i>
+          Report</span
+        >
+      </button>
+    </span>
+    <span>
+      <button
+        *ngIf="buttonTypeId != 2"
+        (click)="buttonTypeId = 2; LoadReports()"
+        class="add-btn"
+        style="float: right; width: 150px"
+      >
+        <span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M12 14.5q-1.036 0-1.768-.732T9.5 12t.732-1.768T12 9.5t1.768.732T14.5 12t-.732 1.768T12 14.5m0 1q1.458 0 2.479-1.021T15.5 12t-1.021-2.479T12 8.5T9.521 9.521T8.5 12t1.021 2.479T12 15.5M4.616 19q-.691 0-1.153-.462T3 17.384V6.616q0-.691.463-1.153T4.615 5h14.77q.69 0 1.152.463T21 6.616v10.769q0 .69-.463 1.153T19.385 19zm0-1h14.769q.23 0 .423-.192t.192-.424V6.616q0-.231-.192-.424T19.385 6H4.615q-.23 0-.423.192T4 6.616v10.769q0 .23.192.423t.423.192M4 18V6z"
+            />
+          </svg>
+          Snapshot</span
+        >
+      </button>
+      <button
+        *ngIf="buttonTypeId == 2"
+        class="add-btn-disable"
+        style="float: right; width: 150px"
+      >
+        <span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M12 14.5q-1.036 0-1.768-.732T9.5 12t.732-1.768T12 9.5t1.768.732T14.5 12t-.732 1.768T12 14.5m0 1q1.458 0 2.479-1.021T15.5 12t-1.021-2.479T12 8.5T9.521 9.521T8.5 12t1.021 2.479T12 15.5M4.616 19q-.691 0-1.153-.462T3 17.384V6.616q0-.691.463-1.153T4.615 5h14.77q.69 0 1.152.463T21 6.616v10.769q0 .69-.463 1.153T19.385 19zm0-1h14.769q.23 0 .423-.192t.192-.424V6.616q0-.231-.192-.424T19.385 6H4.615q-.23 0-.423.192T4 6.616v10.769q0 .23.192.423t.423.192M4 18V6z"
+            />
+          </svg>
+          <i *ngIf="loadImport" class="fa fa-refresh fa-spin"></i>
+          Snapshot</span
+        >
+      </button>
+    </span>
   </div>
 </div>
 <br /><br /><br />
-<div class="mt-2" style="margin-top: 10%">
-  <div class="mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource">
-      <!-- Name Column -->
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef>Name</th>
-        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
-      </ng-container>
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-    </table>
+<div class="mt-2 mb-5" style="margin-top: 10%">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Date Column -->
+    <ng-container matColumnDef="cell1">
+      <th
+        style="
+          background: #2f4858 !important;
+          border: 1px solid #2f4858 !important;
+          color: white !important;
+        "
+        mat-header-cell
+        *matHeaderCellDef
+      >
+        NAME
+      </th>
+      <td
+        mat-cell
+        *matCellDef="let element"
+        [matTooltip]="element.name"
+        matTooltipPosition="above"
+        (click)="copyText(element.name)"
+      >
+        <span style="cursor: pointer !important">{{ element.name }}</span>
+      </td>
+    </ng-container>
 
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+  </table>
+  <div *ngIf="Loading" class="d-flex justify-content-center mt-4">
+    <div
+      class="spinner-border text-success"
+      style="width: 3rem; height: 3rem; color: #2f4858 !important"
+      role="status"
+    >
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+  <div>
+    <div
+      class="zeroLength mt-3"
+      *ngIf="filteredReports.length == 0 && !Loading"
+    >
+      <img
+        src="assets/Images/ntitle/matter/Group.png"
+        alt="dataNotFound"
+        style="height: 15rem"
+      />
+      <span class="zeroLengthText">Opps: No record found</span>
+    </div>
     <mat-paginator
-      [pageSizeOptions]="[5, 10, 20]"
-      showFirstLastButtons
-      aria-label="Select page of periodic elements"
+      *ngIf="!Loading"
+      [length]="totalItems"
+      [pageSize]="pageSize"
+      (page)="onPageChange($event)"
     >
     </mat-paginator>
   </div>
+</div>
+<!-- PopUp -->
+<div>
+  <p-toast></p-toast>
+  <p-confirmDialog></p-confirmDialog>
 </div>
