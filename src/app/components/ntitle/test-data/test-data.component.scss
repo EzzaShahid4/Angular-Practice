@@ -1,0 +1,201 @@
+/* File Upload Box */
+.file-upload-container {
+  background: #f8f9fa;
+  border: 2px dashed #007bff;
+  border-radius: 10px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  width: 100%;
+  max-width: 400px;
+}
+
+.file-upload-container:hover {
+  background: #e9ecef;
+  border-color: #0056b3;
+}
+.add-btn {
+  background-color: #2f4858;
+  border-radius: 8px;
+  color: #fff;
+  border: 0px;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: -0.011em;
+  text-align: center;
+  padding: 5px 10px;
+  height: 43px;
+}
+.add-btn-disable {
+  background-color: #b1b8b1;
+  border-radius: 8px;
+  color: #fff;
+  border: 0px;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: -0.011em;
+  text-align: center;
+  padding: 5px 10px;
+  height: 43px;
+  cursor: not-allowed;
+}
+.filters {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+//search
+.search {
+  // margin-left: 30px !important;
+  height: 45px;
+  max-width: 510px;
+  background: #ffffff;
+  border-radius: 8px;
+  width: 323px;
+  border: 1px solid #3a3a3a3d;
+}
+.search-input {
+  font-size: 12px;
+  font-weight: 500;
+  width: 90%;
+  letter-spacing: 0px;
+  height: 30px !important;
+  background-color: #ffffff !important;
+  color: #2f4858;
+  border: 0px;
+  margin-left: 5px;
+}
+
+.search-icon {
+  margin-left: 10px;
+  color: #2f4858;
+  font-weight: 400;
+}
+
+.cross-icon {
+  float: right;
+  margin-right: 10px;
+  font-weight: 900 !important;
+  margin-left: 3px !important;
+  color: #2f4858;
+  font-size: 20px !important;
+  cursor: pointer;
+}
+
+.linear-gradient-Id-1 {
+  background: linear-gradient(90deg, #a2a2a2 43%, #f7f7f7a1 100%);
+}
+.linear-gradient-Id-3 {
+  background: linear-gradient(90deg, #ff7260 31%, #ffd8c2 100%);
+}
+.linear-gradient-Id-4 {
+  background: linear-gradient(90deg, #ffbc00 31%, #e9e183 100%);
+}
+.linear-gradient-Id-5 {
+  background: linear-gradient(90deg, #5a6d78 31%, #819aa9 100%);
+}
+
+.linear-gradient-Id-6 {
+  background: linear-gradient(90deg, #d44238 47%, #ffdddb 113%);
+}
+.linear-gradient-Id-7 {
+  background: linear-gradient(90deg, #ff1100 47%, #e8a7a3 113%);
+}
+.default-class {
+  background: #2f4858;
+  font-size: 12px;
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-family: "Rethink Sans";
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.011em;
+  text-align: center;
+  color: #ffffff;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  font-size: 12px;
+  font-weight: 500;
+}
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.btn-custom {
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  min-width: 120px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.save-btn {
+  background: #2f4858;
+  color: #fff;
+  height: 40px;
+}
+.save-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #454f55, #2f4858);
+  transform: translateY(-2px);
+}
+.save-btn:disabled {
+  background: rgb(193, 218, 194);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.cancel-btn {
+  background: linear-gradient(135deg, #f44336, #b71c1c);
+  color: #fff;
+}
+.cancel-btn:hover {
+  background: linear-gradient(135deg, #ef5350, #c62828);
+  transform: translateY(-2px);
+}
+.radio-group {
+  display: flex;
+  gap: 15px;
+}
+
+.radio-group label {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+/* Hide real radio */
+.radio-group input {
+  display: none;
+}
+
+/* Custom circle */
+.radio-group span {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #2f4858;
+  border-radius: 50%;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+/* Checked style */
+.radio-group input:checked + span {
+  background: #2f4858;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}

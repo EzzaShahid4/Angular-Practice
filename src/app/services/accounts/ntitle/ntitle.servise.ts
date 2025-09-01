@@ -39,4 +39,52 @@ export class NtitleServiceService {
       })
     );
   }
+  getTenureType() {
+    return this.repositoryService
+      .ntitleget('Master/get-tenure-type', true)
+      .pipe(
+        map((response: any) => {
+          return response;
+        })
+      );
+  }
+  getMatterInstructionType() {
+    return this.repositoryService
+      .ntitleget('Master/get-matter-instruction-type', true)
+      .pipe(
+        map((response: any) => {
+          return response;
+        })
+      );
+  }
+  getAllmattersList(data: any) {
+    return this.repositoryService
+      .ntitlepost('Matter/get-nTitle-matter-list-by-search', data, true)
+      .pipe(
+        map((data: any) => {
+          return data;
+        })
+      );
+  }
+  getMatterStatus() {
+    return this.repositoryService
+      .ntitleget('Master/get-ntitle-matter-status', true)
+      .pipe(
+        map((response: any) => {
+          return response;
+        })
+      );
+  }
+  uploadMatterJSONFile(matterId: any, data: any) {
+    return this.repositoryService
+      .ntitlepostWithFile(
+        'TitleInvestigation/insert-data-of-Matter/' + matterId,
+        data
+      )
+      .pipe(
+        map((data: any) => {
+          return data;
+        })
+      );
+  }
 }
