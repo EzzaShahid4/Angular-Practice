@@ -9,6 +9,8 @@ import {
   provideAnimations,
 } from '@angular/platform-browser/animations';
 import { importProvidersFrom } from '@angular/core';
+import { providePrimeNG } from 'primeng/config';
+import Aura from '@primeng/themes/aura';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -16,5 +18,9 @@ bootstrapApplication(AppComponent, {
     provideHttpClient(), // HttpClient provider
     provideAnimations(), // Enables Angular animations globally
     importProvidersFrom(BrowserAnimationsModule),
+    
+    providePrimeNG({
+      theme: { preset: Aura }
+    })
   ],
 }).catch((err) => console.error(err));
