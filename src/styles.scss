@@ -89,3 +89,22 @@
 .p-dropdown {
   width: 200px !important;
 }
+.search {
+  // margin-left: 30px !important;
+  height: 40px;
+  max-width: 370px !important;
+  border: 1px solid #0a285a;
+  background: #ffffff;
+  border-radius: 8px;
+}
+.search-input {
+  font-size: 14px;
+  width: 90%;
+  height: 30px !important;
+  background-color: #ffffff !important;
+  color: black;
+}
+.align-centre {
+  display: flex;
+  align-items: center;
+}

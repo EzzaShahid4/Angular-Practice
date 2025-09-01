@@ -132,6 +132,64 @@
     </span>
   </div>
 </nav>
+<div
+  class="text-center d-flex justify-content-end"
+  *ngIf="
+    (selectedMatterId && investigationTypeValue == 1 && statusTypeValue == 4) ||
+    statusTypeValue == 6
+  "
+>
+  <br />
+
+  <div
+    class="file-upload-container mt-3"
+    style="margin-right: 10px"
+    (click)="fileInput.click()"
+  >
+    <input
+      type="file"
+      accept=".json,application/json"
+      #fileInput
+      (change)="onFileSelected($event)"
+      hidden
+    />
+    <p *ngIf="selectedFile; else placeholder">
+      Selected File: <strong>{{ selectedFile?.name }}</strong>
+    </p>
+    <ng-template #placeholder>
+      <p class="btn-text mt-3">Click to select a JSON file</p>
+    </ng-template>
+
+    <div
+      class="errorValdation"
+      style="text-align: center"
+      *ngIf="errorMessage != ''"
+    >
+      {{ errorMessage }}
+    </div>
+  </div>
+  <div class="button-group mt-5" *ngIf="selectedFile">
+    <!-- Save Button -->
+    <button
+      (click)="addFreeholdData()"
+      [disabled]="!selectedFile"
+      class="btn-custom save-btn"
+    >
+      <i *ngIf="saveLoading" class="fa fa-refresh fa-spin"></i>
+      Save
+    </button>
+
+    <!-- Cancel Button -->
+    <button
+      (click)="cancelUpload()"
+      class="btn-custom save-btn"
+      style="background-color: red !important"
+    >
+      <i class="fa fa-times"></i>
+      Cancel
+    </button>
+  </div>
+</div>
 <div class="mt-5" style="margin-top: 10%">
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <ng-container matColumnDef="cell0">
