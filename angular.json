@@ -5,7 +5,8 @@
     "cache": {
       "path": "C:/angular-cache",
       "enabled": false
-    }
+    },
+    "analytics": "e1eb6948-6e51-48a0-a646-97e06a2b6a44"
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -43,10 +44,12 @@
               "src/favicon.ico"
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "@angular/material/prebuilt-themes/indigo-pink.css"
+               "src/styles.scss",
+  "node_modules/bootstrap/dist/css/bootstrap.min.css",
+  "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+    "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+  "node_modules/primeicons/primeicons.css"
+   
             ],
 
             "scripts": []
