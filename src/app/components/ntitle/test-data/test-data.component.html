@@ -154,7 +154,7 @@
       hidden
     />
     <p *ngIf="selectedFile; else placeholder">
-      Selected File: <strong>{{ selectedFile?.name }}</strong>
+      Selected File: <strong>{{ selectedFile.name }}</strong>
     </p>
     <ng-template #placeholder>
       <p class="btn-text mt-3">Click to select a JSON file</p>

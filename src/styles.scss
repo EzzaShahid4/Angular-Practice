@@ -108,3 +108,295 @@
   display: flex;
   align-items: center;
 }
+.p-galleria .p-galleria-indicators .p-galleria-indicator.p-highlight button {
+  background-color: #000 !important;
+}
+
+.p-galleria .p-galleria-indicators .p-galleria-indicator button {
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.p-dropdown .p-dropdown-label {
+  padding: 6px !important;
+  font-family: Poppins !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 24px !important;
+  letter-spacing: -0.011em !important;
+  text-align: left;
+  color: #000 !important;
+}
+
+.p-dropdown {
+  width: 200px !important;
+}
+
+//prime ng styles end
+.text-two-line {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.mat-elevation-z8 thead th {
+  text-shadow: none;
+  background-color: #59a52c !important;
+  color: #fff;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.05em;
+  border: 1px solid #59a52c !important;
+  height: 40px;
+  text-transform: capitalize !important;
+}
+.mat-elevation-z8-com thead th {
+  text-shadow: none;
+  background-color: #0d1116f3 !important;
+  color: #fff;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.05em;
+  border: 1px solid #0d1116f3 !important;
+  height: 40px;
+  text-transform: capitalize !important;
+}
+.mat-elevation-z8-av thead th {
+  text-shadow: none;
+  background-color: #040421 !important;
+  color: #fff;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.05em;
+  border: 1px solid #0d1116f3 !important;
+  height: 40px;
+  text-transform: capitalize !important;
+}
+.table-heading {
+  // text-shadow: none;
+  // background-color: #08255B !important;
+  // color: #ACAEB4;
+  // font-family: Poppins;
+  // font-size: 12px !important;
+  // font-style: normal;
+  // font-weight: 700;
+  // line-height: normal;
+  // letter-spacing: 0.05em;
+  // border: 1px solid #08255B !important;
+  // height: 40px;
+  text-shadow: none;
+  background-color: #59a52c !important;
+  color: #fff;
+  font-family: Poppins;
+  font-size: 12px !important;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.05em;
+  border: 1px solid #59a52c !important;
+  height: 20px !important;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: #fff !important;
+  //   background: url(./assets/Images/calendar_date_icon.png) no-repeat;
+}
+
+.mat-mdc-icon-button .mat-mdc-button-touch-target {
+  color: #fff !important;
+}
+
+.mat-mdc-paginator {
+  background: #59a52c;
+  color: #fff;
+}
+
+.mat-mdc-paginator-icon {
+  fill: #fff !important;
+}
+
+.table-body {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.mat-tab-header {
+  border-color: #cacbcd !important;
+  border-left: 1px ridge #cacbcd;
+  border-right: 1px ridge #cacbcd;
+  background-color: #ffffff;
+}
+
+table {
+  // border-radius: 30px 30px 0px 0px !important;
+  overflow: hidden !important;
+}
+
+.mat-elevation-z8 thead tr {
+  border: 1px solid #59a52c !important;
+  background: #59a52c !important;
+  // border-radius: 10px;
+}
+
+th.mat-header-cell {
+  padding-left: 10px !important;
+  color: #fff !important;
+  background-color: #59a52c !important;
+  font-family: Poppins;
+  font-size: 12px !important;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.mat-mdc-table mat-header-row.mat-mdc-header-row {
+  height: unset;
+  color: #3a3a3a !important;
+  background-color: #ffffff !important;
+}
+
+table .mat-mdc-header-cell {
+  background: inherit;
+  color: #fff !important;
+}
+
+th.mat-header-cell {
+  padding-left: 10px !important;
+  height: 25px !important;
+}
+
+.mat-paginator-container {
+  justify-content: space-between !important;
+}
+
+td.mat-cell {
+  padding: 0px 8px 0px 8px !important;
+  border: 1px solid #060c1a !important;
+  color: #fff;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-align: left !important;
+}
+
+.mat-mdc-table .mdc-data-table__row {
+  height: 52px;
+  background-color: #ffffff !important;
+  border: 1px solid #d5d5d5 !important;
+  color: #3a3a3a !important;
+}
+
+.mdc-data-table__cell {
+  border-bottom: 1px solid #d5d5d5 !important;
+  color: #3a3a3a;
+  text-align: left !important;
+}
+//user dashboard top title
+.top-title {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.011em;
+  text-align: left;
+  color: #184a9d;
+}
+.login-form button {
+  padding: 6px;
+  font-size: 18px;
+  background-color: #2f4858;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+  .login-image {
+    display: none;
+    width: 100%;
+    height: 250px;
+  }
+  .login-form {
+    width: 100%;
+    padding: 20px;
+  }
+}
+.login-form {
+  width: 47%;
+  padding: 80px 30px 30px 30px;
+  background-color: #eaeaea;
+}
+
+label {
+  color: #2f4858;
+  font-family: "Rethink Sans";
+}
+.login-form button {
+  padding: 6px;
+  font-size: 18px;
+  background-color: #2f4858;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+.input-field {
+  padding: 8px !important;
+}
+.input-field input {
+  height: 40px;
+  padding: 10px;
+  border-style: none;
+  border-radius: 8px;
+  border: 1px solid #c7c7c7;
+  background-color: #fff;
+  outline: none;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: -1.1%;
+  text-align: left;
+  color: #000000;
+  width: 100%;
+}
+.input-field textarea {
+  padding: 10px;
+  font-size: 20px;
+  border-style: none;
+  border-radius: 16px;
+  border: 1px solid #c7c7c7;
+  background-color: #fff;
+  outline: none;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: -1.1%;
+  text-align: left;
+  color: #000000;
+  width: 100%;
+}

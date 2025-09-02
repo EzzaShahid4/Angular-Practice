@@ -42,7 +42,7 @@ export class ReportsComponent {
   Loading: boolean = false;
   AddLoading: boolean = false;
   dataSource!: MatTableDataSource<MatterModel>;
-  columnsToDisplay = ['cell1'];
+  columnsToDisplay = ['cell1', 'cell2'];
   searchKey: any = null;
   loadReport: boolean = false; // Initialize loadReport to false
   createReport: any = null;
@@ -104,13 +104,13 @@ export class ReportsComponent {
 
     this.ntitleService.getReports(this.buttonTypeId, this.matterId).subscribe(
       (data) => {
-        debugger;
         const dt = data.data || [];
         // this.reports = dt
         //   .filter((item: any) => item !== null && item !== undefined && item !== '') // keep only valid names
         //   .map((item: any) => ({ name: item }));
         this.reports = dt.map((item: any) => ({
-          name: item ?? '',
+          name: item.index ?? '',
+          text: item.text ?? '',
         }));
 
         // initially filtered = all reports

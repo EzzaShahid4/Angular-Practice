@@ -291,6 +291,7 @@ export class TestDataComponent {
     this.errorMessage = '';
   }
   checkValues(data: any) {
+    debugger;
     this.investigationTypeValue = data.matterInstructionTypeId;
     this.statusTypeValue = data.matterStatusId;
     this.tenureTypeValue = data.tenureId;
